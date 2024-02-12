@@ -1,6 +1,8 @@
 import { useReducer } from "React"
+import DigitBtn from "./DigitBtn";
+import "./styles.css";
 
-const ACTIONS = {
+export const ACTIONS = {
   ADD_DIGIT: "add-digit",
   CHOOSE_OPERATION: "choose-operation",
   CLEAR: "clear",
@@ -15,22 +17,22 @@ function reducer(state, { type, payload }) {
         ...state,
         currentOperand: `${currentOperand || ""} ${payload.digit}`
       }
-      break;
-    case ACTIONS.CHOOSE_OPERATION:
 
-      break;
-    case ACTIONS.CLEAR:
+    // case ACTIONS.CHOOSE_OPERATION:
 
-      break;
-    case ACTIONS.DELETE_DIGIT:
+    //   break;
+    // case ACTIONS.CLEAR:
 
-      break;
-    case ACTIONS.EVALUATE:
+    //   break;
+    // case ACTIONS.DELETE_DIGIT:
 
-      break;
+    //   break;
+    // case ACTIONS.EVALUATE:
 
-    default:
-      break;
+    //   break;
+
+    // default:
+    //   break;
   }
 }
 
@@ -47,7 +49,7 @@ function App() {
       </div>
       <button className="span-two">AC</button>
       <button>DEL</button>
-      <button>÷</button>
+      <DigitBtn digit="÷" dispatch={dispatch} />
       <button>1</button>
       <button>2</button>
       <button>3</button>
